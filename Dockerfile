@@ -3,6 +3,4 @@ LABEL authors="matanstern"
 WORKDIR /app
 COPY . /app
 RUN pip install -r requirements.txt
-CMD ["python", "dataprep.py"]
-CMD ["python", "pipeline.py"]
-CMD ["python", "service.py"]
+CMD ["sh", "-c", "python dataprep.py && python pipeline.py && python service.py"]
